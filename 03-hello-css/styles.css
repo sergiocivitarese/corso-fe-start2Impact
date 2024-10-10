@@ -1,0 +1,46 @@
+body {
+    color: #414141; /*dark gray*/
+    background-color: #EEEEEE; /*ligh gray*/
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+  
+  h2 {
+    font-size: 1.6em;
+  }
+
+  /*applicare lo stesso stile a più tag in simultanea
+  per evitare codice ridondante */
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-weight: normal;
+  
+  }
+
+  /*per quanto riguarda l'utilizzo del font da applicare il browser cerca da sinistra verso destra se è disponibile, altrimenti setta il successivo o 
+  continua la ricerca fino a quello di default all'estrema destra*/
+
+ol {
+  list-style-type: circle;
+}
+
+ul {
+  list-style-type: lower-roman;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  text-align: left;
+}
+
+/*
+L'ordine degli <link/>elementi è importante. 
+I fogli di stile che vengono dopo sovrascriveranno 
+gli stili di quelli precedenti. 
+*/

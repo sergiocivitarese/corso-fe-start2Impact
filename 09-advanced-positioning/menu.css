@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 1200px;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: #5D6063;
+}
+
+a:link, a:visited {
+    color: #5D6063;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 50px;
+    background: #D6E9FE;
+}   
+
+.menu {
+    margin-top: 15px;
+}
+
+.menu > li {                /*a tutti gli elementi <li> diretti discendenti di <menu> */
+    display: inline;        /*visualizza gli elementi della lista su un'unica riga anzichè come da default in colonna*/
+    margin-right: 50px;     /*aggiunge 50px di spazio a destra di ogni elementi <li< */
+}
+
+.menu > li:last-of-type {    /*seleziona l'ultimo elemento <li> della lista che discende da <menu> */
+    margin-right: 0;         /*imposta il suo margine dx a 0 */
+}
+
+.features-menu {
+    display: flex;
+    flex-direction: column;
+    background: #B2D6FF;
+    border-radius: 5px;
+    padding-top: 60px;
+
+    /*aggiungo il codice per spostare il sottomenu con una posizione (relativamente) assoluta*/
+    position: absolute;
+    top: -25px;
+    left: -30px;
+  }
+  
+  .features-menu li {
+    list-style: none;
+    border-bottom: 1px solid #FFF;
+  
+    padding: 0 40px 10px 20px;
+    margin: 10px;
+    /*aggiungo il z-index per la visualizzazione in base alla profondità*/
+    z-index: 1;
+  }
+  
+  .features-menu li:last-of-type {
+    border-bottom: none;
+  }
+
+  .dropdown {
+    /*trasformandolo in un elemento posizionato è possibile cambiare il sistema di coordinate */
+    position: relative;
+  }
+
+  .dropdown > span {
+    z-index: 2;
+    position: relative; /*importante specificarlo, perchè solo gli elementi posizionati prestano attenzione al valore della z-index*/
+    cursor: pointer;
+  }
+
+  /*serve per nascondere il menu, che compare al passaggio del mouse */
+  .dropdown:hover  .features-menu { 
+    display: flex;
+    flex-direction: column;
+    background: #B2D6FF;
+  }
+
+  /*fa sparire completamente l'elemento */
+  .features-menu {
+    display: none;
+  }

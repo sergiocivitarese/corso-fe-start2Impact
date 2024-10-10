@@ -1,0 +1,164 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #181818;
+}
+
+a{
+    color: grey;
+}
+
+header{
+    background-color: #212121;
+    box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, .1);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.header ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #212121;
+}
+
+.header ul a{
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    /* border-right: 1px solid red; */
+}
+
+.header ul a:hover{
+    background-color: #181818;
+}
+
+.header .logo{
+    float: left;
+    font-size: 25px;
+    padding: 10px 20px;
+}
+
+.header .menu{
+    clear: both;  /*serve a forzare la direzione che si vuole assegnare al blocco*/
+    max-height: 0;
+    transition: max-height .2s ease-out; /*metodo per mostrare il menu e nasconderlo cliccando l'icona*/
+}
+
+/*lavoriamo sul container dell'icona*/
+.header .menu-icon{
+    /* border: 1px solid red; */
+    padding: 28px 20px;
+    position: relative; /*relative perchè l'icona al suo insterno sarà absolute ed è necessario che il contenitore sia relative*/
+    float: right;
+    cursor: pointer;
+}
+
+/*lavoriamo sull'icona effettiva*/
+.header .menu-icon .nav-icon{
+    background-color: grey;
+    display: block;
+    width: 18px;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+}
+/*-------------------------------------------INIZIO-------------------------------------------*/
+
+/*utilizzo le pseudo classi per creare le altre due linee dell'hamburger con <before> e <after>*/
+
+/* .header .menu-icon .nav-icon::before{
+    background-color: grey;
+    content: "";
+    display: block;
+    height: 100%;      dell'elemento che lo precede che ha height 18 px
+    width: 100%;        stessa cosa per la width 
+    transition: all .2s ease-out;
+    position: absolute;
+    top: 5px;
+}
+
+/*stessa cosa ma con <after> per la linea di sotto*/
+/* .header .menu-icon .nav-icon::after{
+    background-color: grey;
+    content: "";
+    display: block;
+    height: 100%;       dell'elemento che lo precede che ha height 18 px 
+    width: 100%;        stessa cosa per la width 
+    transition: all .2s ease-out;
+    position: absolute;
+    top: -5px;             perchè la vogliamo sotto
+}  */
+
+/*--------------------------------------FINE ------------------------------------------------*/
+
+/*tutto questo codice ridondante può essere accopiato nel seguente modo*/
+
+.header .menu-icon .nav-icon::before,
+.header .menu-icon .nav-icon::after{
+    background-color: grey;
+    content: "";
+    display: block;
+    height: 100%;     
+    width: 100%;      
+    transition: all .2s ease-out;
+    position: absolute;
+}
+.header .menu-icon .nav-icon::after{
+    top: 5px;
+}
+.header .menu-icon .nav-icon::before{
+    top: -5px;
+}
+
+/*andiamo a lavorare sulla checkbox che non vogliamo vedere e dobbiamo cercare di nasconderla */
+/*quando la checkbox risulta chekkata andiamo ad aumentare la larghezza del menu a tendina che ora c'è già ma non si vede perchè è 0*/
+/*vogliamo checcato il menu button ovvero "menu-btn" */
+.header .menu-btn{
+    display: none; 
+}
+
+.header .menu-btn:checked ~ .menu{
+    max-height: 240px;
+}
+
+/*una volta cliccato sul menu e una volta che si apre vogliamo che l'icona stessi cambi dinamicamente, andiamo con questa istruzione
+a far si che quando menu-btn viene checcato menu-icon e nav-icon subiscono una modifica*/
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon{
+    background-color: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon::before{
+    transform: rotate(-45deg);
+    top: 0;
+}
+.header .menu-btn:checked ~ .menu-icon .nav-icon::after{
+    transform: rotate(45deg);
+    top: 0;
+}
+
+/* per andare a lavorare su desktop*/
+/*quando allargo la pagina dopo una certa grandezza gli elementi li del menu si spostano a sinistra*/
+@media(min-width: 48em) {
+    .header li{
+        float: left;
+    }
+
+    .header li a{
+        padding: 20px 30px;
+    }
+
+    .header .menu{
+        clear: none;   /*ci porta il menu sulla stessa riga dato che prima scendava in basso */
+        float: right;  /*lo spostiamo sulla destra */
+        max-height: 0;
+    }
+
+
+    .header .menu-icon{
+        display: none; /*fa scomparire l'icona del menu quando allargo la pagina in modalità desktop*/
+    }
+}

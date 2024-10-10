@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Tables</title>
+  </head>
+  <body>
+    <h3>Tabella 1</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Età</th>
+          <th>Città</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mario Rossi</td>
+          <td>30</td>
+          <td>Roma</td>
+        </tr>
+        <tr>
+          <td>Luigi Bianchi</td>
+          <td>25</td>
+          <td>Milano</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+
+  <h3>Tabella 2 (complessa)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+
+        <th>Età</th>
+
+        <th>Città</th>
+
+        <th rowspan="2">Note</th>
+        <!-- Cella che attraversa due righe -->
+      </tr>
+
+      <tr>
+        <th colspan="2">Informazioni Personali</th>
+        <!-- Cella che attraversa due colonne -->
+
+        <th>Contatti</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Mario Rossi</td>
+
+        <td>30</td>
+
+        <td>Roma</td>
+
+        <td rowspan="2">Nessuna nota</td>
+        <!-- Cell che attraversa due righe -->
+      </tr>
+
+      <tr>
+        <td>Luigi Bianchi</td>
+        <td>25</td>
+        <td>Milano</td>
+      </tr>
+    </tbody>
+  </table>
+</html>

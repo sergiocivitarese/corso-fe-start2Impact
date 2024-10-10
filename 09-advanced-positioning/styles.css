@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 1200px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.example {
+  display: flex;
+  justify-content:space-around;
+  
+  width: 800px;
+  margin: 50px 0;
+  background-color: #D6E9FE;
+}
+
+.item img {
+  display: block;
+}
+
+.item-relative {
+  position: relative;  /*modifica la posizione dell'elemento rendendolo un [elemento posisizonato]--> parola chiave  */
+  bottom: 30px;           /*la figura dista di 30 px dal margine alto, quindi viene spostata dall'alto di 30 px in basso */
+  right: 30px;          /*la figura dista di 30 px dal margine sinistro, quindi spostata a dx di 30 px*/
+}
+
+.item-absolute {
+  /*il posizionamento assoluto fa riferimento alle coordinate della pagina del browser stesso*/
+  /*in questo caso è come dire posizionalo a 10px di distazna dal margine alto e dal margine sinistro della pagina*/
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.absolute {
+  position: relative;
+}
+
+.item-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+

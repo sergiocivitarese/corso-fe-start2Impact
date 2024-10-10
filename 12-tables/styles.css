@@ -1,0 +1,32 @@
+table {
+    width: 100%;
+    border-collapse: collapse;    /*elimina lo spazio tra i bordi delle celle */
+}
+
+th, td{
+    border: 1px solid #dddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;   /*colore di sfondo per le righe pari */
+}
+
+th {
+    background-color: #4acf50;
+    color: white;
+}
+
+
+/*Tabelle responsive per schermi più piccoli (es mobile) */
+
+@media screen and (max-width: 600px) {
+
+    table {
+      width: 100%;
+      display: block;
+      overflow-x: auto; /* Aggiunge uno scorrimento orizzontale */
+    }
+  
+  }

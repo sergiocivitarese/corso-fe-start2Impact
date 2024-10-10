@@ -1,0 +1,158 @@
+.synopsis {
+    color: #7E8184;        /* Light gray */
+    font-style: italic; 
+}
+
+
+.button {
+    color: #FFF;
+    background-color: #5995DA;      /*Blue*/
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #5D6063;      /*Dark gray*/
+    border-radius: 5px;
+
+    width: 200px;
+    margin: 20px auto;
+}   
+
+
+.page {
+    width: 600px;
+    margin: 0 auto;
+}
+
+/*implementazione di un secondo stile nella button, in class="" passiamo le due classi button e call-to-action */
+/* l'ordine gerarchico delle proprietà dipende dall'ordine di dichiarazione nel file css */
+/*avviene un vero e proprio override delle proprietà css inserite in button e cambiate in call-to-action*/
+
+.call-to-action {
+    font-style: italic;
+    background-color: #EEB75A;  /* Yellow */
+}
+
+.synopsis em {
+    font-style: normal;
+  }
+
+  /*analisi degli stili diversi di collegamenti */
+
+  a:link {
+    color: blue;
+    text-decoration: none;
+  }
+
+  /*      
+    a:visisted {
+    color: purple;
+    }
+*/
+
+  a:hover {
+    color: aqua;
+    text-decoration: underline;
+  }
+  a:active {
+    color: red;
+  }
+
+  a:visited:hover {
+    color: orange;
+  }
+
+  a:visited:active {
+    color: red;
+  }
+
+
+  /*aggiorno i pulsanti */
+.button:link,
+.button:visited {
+    display: block;
+    text-decoration: none;
+    color: #FFF;
+    background-color: #5995DA;      /*Blue*/
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #5D6063;      /*Dark gray*/
+    border-radius: 5px;
+
+    width: 200px;
+    margin: 20px auto;
+} 
+
+
+/*inserisco gli hover per il cambio colore al passaggio del mouse */
+.button:hover,
+.button:visited:hover {
+  color: #FFF;
+  background-color: #76AEED;  /* Light blue */
+}
+
+/*inserisco visited per il cambio colore al click del mouse sul pulsante */
+.button:active,
+.button:visited:active {
+    color: #FFF;
+    background-color: #5995DA; /* Blue */
+}
+
+/*aggiorno la call-to-action perchè avendo modificato .button poco fa le modifiche prevalevano sulla call to action e noi vogliamo ripristinare
+la colorazione gialla del pulsante */
+
+/*
+Poiché abbiamo aggiunto la .call-to-actionclasse solo al nostro secondo pulsante, questo è l'unico che diventerà giallo.
+ Naturalmente, abbiamo ancora bisogno della .buttonclasse su entrambi <a>gli elementi perché definisce stili condivisi 
+ come il padding, il raggio del bordo e lo spessore del carattere.
+*/
+
+.call-to-action:link,
+.call-to-action:visited {
+  font-style: italic;
+  background-color: #EEB75A;     /* Yellow */
+}
+
+.call-to-action:hover,
+.call-to-action:visited:hover {
+  background-color: #F5CF8E;     /* Light yellow */
+}
+
+.call-to-action:active,
+.call-to-action:visited:active {
+  background-color: #EEB75A;     /* Yellow */
+}
+
+/* 
+ Ci sono anche un sacco di altre pseudo-classi che forniscono informazioni extra sui dintorni di un elemento.
+ Ad esempio, la :last-of-typepseudo-classe seleziona l'elemento finale di un tipo particolare nel suo elemento padre. 
+ Questo ci offre un'alternativa ai selettori di classe per selezionare elementi specifici.
+Ad esempio, potremmo usare :last-of-typeper aggiungere un po' di spazio dopo l'ultimo paragrafo della nostra pagina di esempio:
+*/
+
+p:last-of-type {
+    margin-bottom: 50px;
+  }
+
+  /*Selettori mediante ID */
+
+  #button-2 {
+    color: #5D6063;  /* Dark gray */
+  }
+
+
+  /*specificità del css, sovrascrittura delle proprietà e quando invece alcune proprietà prevalgono su altre 
+  nonostante la posizioe nel file css */
+
+  #button-2 {
+    background-color: #D55C5F;    /* Red */
+  }
+
+  /*
+  I selettori ID hanno una specificità maggiore dei selettori di classe, quindi questo renderà rosso 
+  il nostro secondo pulsante anche se proviamo a impostare background-colorwith .call-to-action:link 
+  più avanti nel nostro foglio di stile. 
+  L'intero concetto di "ordine è importante" funziona solo quando tutte le tue regole hanno la stessa specificità.
+  
+  
+  */

@@ -1,0 +1,39 @@
+div{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.box1{
+    background-color: #6141eb;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+.box2{
+    background-color: #00a2eb;
+    position: relative;    /*serve per poter modificare manualmente la posizione del blocco */
+    left: 100px;
+    top: -100px;
+
+   /* z-index: -1; */
+}
+
+.box3{
+    background-color: #c1155c;
+    position: absolute;
+    top: 70px;
+    left: 150px;
+}
+
+.parent{
+    background-color: #17ede0;
+    position: relative;
+}
+
+.fisso {
+    background-color: #ddd;
+    position: fixed;
+    left: 400px;
+    bottom: 400px;
+}

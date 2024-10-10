@@ -1,0 +1,67 @@
+@import './resets';
+@import './variables';
+
+@function weight($weights-name) {
+    @return map-get($font-weights, $weights-name);
+}
+
+//@mixsin serve e replicare più istruzioni in varie classi senza dover riscrivere il codice (gli si assegna un nome)
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin theme($light-theme: true) {
+    @if $light-theme {
+        background-color: lighten($primary-color, 100%);
+        color: darken($text-color, 100%);
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+
+body{
+    background-color: $primary-color;
+    color: $text-color;
+}
+
+.main{
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    @include flexCenter(column); //includo il @mixsin generato
+    width: 80%;
+    margin: 0 auto;
+    // con SASS possiamo innestare lo stile delle classi css in altre classi 
+    // la & si usa per un figlio e replica in automatico il nome del padre ad es: .main_paragraph ---> &__paragraph
+    #{&}__paragraph1{
+        font-weight: weight(bold);
+        &:hover{
+            color: pink;
+        }
+    }
+
+    #{&}__paragraph2 {
+        @extend .main__paragraph1;
+
+        &:hover{
+            color: $accent-color;
+        }
+    }
+
+    
+    @include mobile{
+        flex-direction: column;
+    }
+}
+
+.light {
+    @include theme($light-theme: true);
+}

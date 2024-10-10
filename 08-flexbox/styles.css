@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .menu-container {
+    color: #fff;
+    background-color: #5995DA;  /* Blue */
+    padding: 20px 0;
+    display: flex;                /* definisce l'elemento come un elemento flex e può usufruire di quelle propreità */
+    justify-content: center;      /* definisce l'allineamento orizzontale centrando il contenuto */
+  }
+  
+  .menu {
+    width: 900px;
+    display: flex;              /* in questo modo il menu iventa un flex item */
+    justify-content: space-between;
+  }
+
+  .links {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .login {
+    margin-left: 20px;
+  }
+
+  .header-container {
+    color: #5995DA;
+    background-color: #D6E9FE;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header {
+    width: 900px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;      /* allineamento verticale */
+            /*align-items: stretch;         /*consente di visualizzare lo sfondo di ogni elemento */   
+  }
+
+
+.photo-grid-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .photo-grid {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    /*  (flex-wrap: wrap) per impostazione predefinita uscirebbero dai bordi della pagina, com questa 
+    proprietà invece, gli elementi che non si adattano vanno a finire nella riga successiva */
+    
+    /*flex-direction: row-reverse;   /*stabilisce se gli item nel contenitore sono messi in riga o colonna */
+    align-items: center;
+
+    /*ordino tutto il blocco insieme a differenza di prima che l'ordinamento avveniva per riga */
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .photo-grid-item {
+    border: 1px solid #fff;
+    width: 300px;
+    height: 300px;
+  }
+
+  .first-item{
+    order: 1;
+  }
+
+  .last-item{
+    order: -1;
+  }
+
+  .social,
+  .subscribe {
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer-item {
+    border: 1px solid #fff;
+    background-color: #D6E9FE;
+    height: 200px;
+    flex: 1;
+  }
+
+  .footer-one,
+  .footer-three {
+    background-color: #5995DA;
+    flex: initial; /*lo rende di spessore statico, in questo caso uguale alla width impostata*/
+    width: 300px;
+  }
+
+  .signup {
+    margin-left: auto;
+  }
