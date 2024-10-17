@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mobile Responsive Menu</title>
+</head>
+
+<body>
+    <!-- la label si collega tramite id, non facendo riferimento alla classe (collego la checkbox con la label grazie a for e id)-->
+    <header class="header">
+        <a href="#" class="logo">@Sergio<span>Civ</span></a>
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon">                        <!--bottone effettivo -->
+            <span class="nav-icon"></span>                              <!-- icona del menu (la label) l'effettiva icona è nav-icon -->
+        </label>
+        <ul class="menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#curriculum">Curriculum</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+        </ul>
+    </header>
+</body>
+</html>

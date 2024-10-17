@@ -1,0 +1,173 @@
+/*----------- VARIABILI -----------*/
+$bar-width: 32px;
+$bar-height: 5px;
+$hamburger-gap: 5px;
+$hamburger-margin: 12px;
+$hamburger-height: calc($bar-height * 3 + $hamburger-gap * 2);
+$x-width: calc($hamburger-height * 1.41421356237);
+
+/*----------- MIXIN e FUNZIONI -----------*/
+@mixin transition-ease {
+  transition: 150ms ease-in-out;
+}
+
+/*----------- HAMBURGER -----------*/
+.hamburger-menu {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: $hamburger-gap;
+  width: max-content;
+  position: absolute;
+  top: 50%;
+  right: $hamburger-margin;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  // INFO: before e after indicano quello che sta prima e quello che sta dopo il nostro elemento (fisicamente si trovano a sx e dx dell'elemento)
+  &::before,
+  &::after,
+  & input {
+    //WHY:  Imposto una stringa vuota così verrà mostrata la barretta
+    content: "";
+    width: $bar-width;
+    height: $bar-height;
+    background-color: $primary-color;
+    border-radius: 100px;
+    //WHY: Sposto il punto di rotazione
+    transform-origin: center right;
+    @include transition-ease;
+  }
+
+  & input {
+    //WHY:  Tolgo l'appearance normale della checkbox
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    pointer-events: none;
+  }
+
+  & input:checked {
+    opacity: 0;
+    width: 0;
+  }
+
+  &:has(input:checked)::before {
+    width: $x-width;
+    rotate: -45deg;
+    translate: 0 calc($bar-height/-2);
+  }
+
+  &:has(input:checked)::after {
+    width: $x-width;
+    rotate: 45deg;
+    translate: 0 calc($bar-height/2);
+  }
+}
+
+/*----------- SIDEBAR -----------*/
+.sidebar {
+  @include transition-ease;
+  position: fixed;
+  top: 0;
+  right: 0;
+  translate: 100%;
+  padding-top: calc($hamburger-height + $hamburger-margin + 1rem);
+  background-color: $secondary-color;
+  color: $primary-color;
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  & nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - calc($hamburger-height + $hamburger-margin + 1rem));
+    text-align: center;
+  }
+
+  & ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  & li {
+    margin: 1rem 0;
+  }
+
+  & a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $primary-color;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .menu-footer {
+    padding-top: 36px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+    a {
+      i {
+        font-size: 36px;
+        color: lighten($primary-color, 10%);
+      }
+    }
+  }
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
+  translate: 0;
+}
+
+@include media-md {
+  .hamburger-menu,
+  .sidebar {
+    all: unset;
+  }
+
+  .hamburger-menu,
+  .menu-footer,
+  .menu-footer a,
+  .menu-footer a i,
+  .menu-footer input {
+    display: none;
+  }
+
+  .navigation {
+    nav {
+      width: max-content;
+      display: flex;
+      flex-direction: row;
+    }
+    &-list {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 24px;
+
+      li {
+        a {
+          text-transform: uppercase;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-xl {
+  .navigation-list li a {
+    font-size: 1.3rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+}

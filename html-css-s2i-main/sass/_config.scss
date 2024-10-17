@@ -1,0 +1,59 @@
+// COLORS
+$primary-color: #191919;
+$secondary-color: #ffe10d;
+$soft-white: #fefefe;
+$sea-green: #5b8c5a;
+$bittersweet: #e3655b;
+$tropical-indigo: #a09be7;
+$jacket-blue: #1d335e;
+$aqua-marine: #a1e8cc;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 16px;
+}
+
+/*------- DEVICES -------*/
+@mixin media-md {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin media-xl {
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
+}

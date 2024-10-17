@@ -1,0 +1,162 @@
+.cv-main {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  width: 80%;
+  gap: 16px;
+  color: lighten($primary-color, 20%);
+
+  & .profile {
+    display: flex;
+    gap: 16px;
+
+    & img {
+      width: 80px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10%;
+    }
+
+    & h1,
+    & h2 {
+      font-weight: 500;
+    }
+
+    & h1 {
+      font-size: 20px;
+      line-height: 0.4rem;
+    }
+
+    & h2 {
+      font-size: 16px;
+      line-height: 0.6rem;
+    }
+
+    & .location {
+      color: lighten($primary-color, 40%);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+
+      & p {
+        font-weight: 500;
+      }
+    }
+
+    @media screen and (max-width: 375px) {
+      & h1 {
+        font-size: 16px;
+        line-height: 1.2rem;
+      }
+
+      & h2 {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .languages,
+  .technologies {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+
+    @include media-lg {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include media-xl {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background: $soft-white;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 14px 12px;
+      height: 100%;
+
+      & img {
+        width: 40px;
+        height: auto;
+      }
+
+      & p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .experience {
+    width: 100%;
+
+    & p,
+    & span {
+      font-size: 14px;
+      line-height: 0.4rem;
+    }
+
+    & p {
+      font-weight: 600;
+    }
+
+    & .experience-description {
+      margin-top: 8px;
+      display: block;
+      line-height: 1.1rem;
+    }
+
+    &-title {
+      background: $secondary-color;
+      max-width: max-content;
+      padding: 8px 4px;
+      border-radius: 4px;
+    }
+
+    & .experience-location {
+      line-height: normal;
+      & a {
+        text-decoration: none;
+        color: $soft-white;
+      }
+    }
+
+    &-location {
+      background: lighten($primary-color, 40%);
+      color: $soft-white;
+      max-width: max-content;
+      padding: 8px 4px;
+      border-radius: 4px;
+    }
+  }
+
+  & .btn {
+    text-align: center;
+    width: 100%;
+    background-color: #191919;
+    border-radius: 8px;
+    color: #fefefe;
+    font-size: medium;
+    font-weight: 600;
+    padding: 16px 0;
+    border: none;
+    text-decoration: none;
+  }
+
+  & .btn:hover {
+    background-color: #333333;
+    color: #ffffff;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cv-main {
+    width: 40%;
+  }
+}

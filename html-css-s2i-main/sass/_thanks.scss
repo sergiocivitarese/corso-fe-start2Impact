@@ -1,0 +1,41 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.bg-white {
+  z-index: 0;
+  display: flex;
+  height: 100%;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+
+  & .card {
+    padding: 32px;
+    text-align: center;
+    background: $secondary-color;
+
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    & h1 {
+      font-weight: 700;
+      padding-bottom: 20px;
+    }
+
+    & h2 {
+      font-size: 20px;
+    }
+
+    & a {
+      padding-top: 20px;
+      color: $primary-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.thanks-header .logo a {
+  text-decoration: none;
+  color: $primary-color;
+}
