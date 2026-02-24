@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');
+
+
+
+
+/* NOTA:
+    Lo sviluppo del css parte inizialmente con la versione mobile
+    successivamente si passa alla versione desktop
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --bg-color: #1f1f21;
+    --text-color: #fff;
+    --main-color: #ffae00;
+
+    --big-font: 32px;
+    --p-font: 16px;
+    --menu-link-font: 20px;
+}
+
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    position: relative;
+}
+
+.logo {
+    font-size: var(--big-font);
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--main-color);
+}
+
+
+/*approccio mobile first, nascondo il menu */
+
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: var(--menu-link-font);
+    color: var(--text-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    /* padding: 10px 0; */
+}
+
+.nav-menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu ul li {
+    text-align: center;
+    margin: 0;
+    padding: 20px 20px;
+    border-bottom: 1px solid var(--bg-color);
+}
+
+.nav-menu ul li a {
+    color: var(--text-color);
+    display: block;
+}
+
+.nav-menu ul li a:hover {
+    color: var(--main-color);
+}
+
+/* stili icona hamburger del menu */
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+}
+
+/* mostra il menu quando il checkbox è selezionato */
+#menu-toggle {
+    display: none;    /*nasconde il quadratino della checkbox */
+}
+
+/* cliccando sull'hamburger esce fuori il menu */
+#menu-toggle:checked + .menu-icon + .nav-menu {
+    display: flex;  /* mostra il menu! */
+}
+
+
+
+/* NOTA ----------- Stili per la versione desktop -------------------------------- */
+@media (min-width: 768px) {
+    header {
+        justify-content: space-between;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .menu-icon {
+    /* nasconde l'icona dell'hamburger nella versione desktop */
+        display: none;
+    }
+
+    .nav-menu {
+        /*in precedenze lo avevamo nascosto per generare l'animazione con il pulsante mobile */
+        display: flex; /*mostra il menu direttamente nel desktop*/
+        position: static;  /*posizionamento normale nel flusso della pagina*/
+        background-color: transparent;
+        width: auto;
+        padding: 0;
+    }
+
+    .nav-menu ul {
+        display: flex;
+    }
+
+    .nav-menu ul li {
+        margin: 0 15px;
+        padding: 0;
+        border-bottom: none; /*rimuovi il bordo nel desktop */
+    }
+
+    .nav-menu ul li a {
+        color: var(--text-color);
+        font-size: var(--menu-link-font);
+    }
+
+    .nav-menu ul li a:hover {
+        color: var(--main-color);
+        background-color: transparent;
+    }
+
+
+
+    /* body versione desktop */
+
+    /* footer versione desktop */
+
+}

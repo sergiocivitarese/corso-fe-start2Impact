@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Monserrat', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --bg-color: #1f1f21;
+    --text-color: #fff;
+    --main-color: #ffae00;
+
+    --big-font: 7rem;
+    --p-font: 1.1rem;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* nasconde l'input della checkbox */
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.menu {
+    display: none;
+    background-color: var(--bg-color);
+    padding: 10px;
+}
+
+.menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    margin: 10px 0;
+}
+
+.menu ul li a {
+    color: var(--text-color);
+}
+

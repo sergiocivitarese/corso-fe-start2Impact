@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- box icons link -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <!--google fonts link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="portfoliostyle.css">
+        <title>Portfolio</title>
+    </head>
+
+<body>
+    <!--NAVBAR -->
+    <nav>
+        <div class="left">
+            <a href="/" class="logo">Sergio<span class="logo2">Civ</span></a>
+        </div>
+
+        <div class="right">
+            <a href="http://github.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                <span>Github</span>
+            </a>
+            <a href="http://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i>
+                <span>Linkedin</span>
+            </a>            <a href="mailto:sergio.civitarese@gmail.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email</span>
+            </a>
+
+            
+        </div>
+    </nav>
+
+    <!--SECTION 1: hero -->
+    <section class="hero-section">
+
+        <div class="text">
+            <h2>Hi, I'm Sergio</h2>
+            <p>
+                My name is Sergio Civitarese, and I work as a software developer at Deda Bit.
+
+                Programming and technology have always been my passions in life, and being able to experience these realities every day makes me proud and motivated.
+            </p>
+            <div class="links">
+                <a href="#skills">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Skills</span>
+                </a>
+
+                <a href="#aboutme">
+                    <i class="fa-solid fa-pen"></i>
+                    <span>About me</span>
+                </a>
+                <a href="#contact">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="headshot">
+            <img src="images/headhshot.webp"  alt="sergio civ headshot">
+        </div>
+    </section>
+
+    <!--SECTION 2: Skills -->
+    <section id="skills" class="skills-section">
+        <h2>Skills</h2>
+        <div class="text">
+            <p>                
+                Some of the frontend or backend programming languages I have had the chance to work with during my professional journey or in my free time.
+                Additionally, a few frameworks or software tools I have used in the company.
+            </p>
+
+            <div class="cells">
+                <div class="cell">
+                    <img src="images/html-logo.webp" alt="html logo">
+                    <span>HTML</span>
+                </div>
+
+                <div class="cell">
+                    <img src="images/css-logo.webp" alt="css logo">
+                    <span>CSS</span>
+                </div>
+
+                <div class="cell">
+                    <img src="images/javascript-logo.webp" alt="javascript logo">
+                    <span>JavaScript</span>
+                </div>
+
+                <div class="cell">
+                    <img src="images/node-logo.webp" alt="node logo">
+                    <span>Node.js</span>
+                </div>
+
+                <div class="cell">
+                    <img src="images/react-logo.webp" alt="react logo">
+                    <span>React.js</span>
+                </div>
+    </section>
+
+    <!--SECTION 3: Testimony -->
+    <section id="aboutme" class="aboutme-section">
+        <h2>About me</h2>
+        <div class="group">
+            <div class="person-details">
+                <img src="images/testimony-headshot.webp">
+                <p>John Doe</p>
+                <p>Lorem ipsum dolor sit.</p>
+
+            </div>
+
+            <div class="text">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At debitis necessitatibus omnis odit impedit ut consectetur nobis beatae temporibus illum tempora, velit obcaecati soluta pariatur eum. Esse officiis dolor laborum.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!--SECTION 4: Contact -->
+    <section id="contact" class="contact-section">
+        <h2>Contact</h2>
+
+        <div class="group">
+            <div class="text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod adipisci iste repellat reprehenderit labore praesentium nisi. In nostrum suscipit, optio, modi dolorem unde, deleniti temporibus repellat corrupti ipsa nisi fugiat.
+                </p>
+            </div>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name">
+
+                <label for="name">Email</label>
+                <input type="email" id="email">
+
+                <label for="message">Message</label>
+                <textarea id="message" cols="20" rows="10"></textarea>
+
+                <button type="sumbit"> Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    
+</body>
+</html>
